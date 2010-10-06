@@ -1,0 +1,56 @@
+
+body {
+/*font-family: 'Linux Libertine', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;*/
+margin: 0;
+margin-bottom: 25px;
+padding: 0;
+background-color: #000;
+font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+font-size: 13px;
+color: #fff;
+}
+
+h1 { font-size: 92px; }
+h2 { font-size: 72px; }
+h3 { font-size: 64px; }
+p { font-size: 58px; }
+
+#page {
+background-color: #ddd;
+width: 750px;
+margin: 0;
+margin-left: auto;
+padding-left: 100px;
+margin-right: auto;
+}
+
+#content {
+background-color: white;
+border: 3px solid #aaa;
+border-top: none;
+padding: 25px;
+width: 500px;
+}
+
+p {
+line-height: 1.5em;
+margin: 1.6em 0;
+}
+
+code {
+    font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
+}
+
+#footer {
+clear: both;
+padding-top: 2em;
+text-align: center;
+font-family: sans-serif;
+font-size: 10px;
+}
+
+#slide {
+    padding: 3em;
+    width: 90%;
+    margin: auto;
+}

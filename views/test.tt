@@ -1,0 +1,6 @@
+
+<script>
+window.setInterval(function() { alert("OK"); }, 1000);
+</script>
+
+DONE

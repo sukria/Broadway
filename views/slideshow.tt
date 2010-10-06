@@ -1,0 +1,33 @@
+<script type="text/javascript" language="javascript">
+
+window.slide = 0;
+
+window.setInterval(function() {
+    $.ajax({
+        type: 'POST', 
+        url: '/current_slide',
+        cache: false,
+        success: function(json) {
+            if (json['slide'] && (json['slide'] != window.slide)) {
+                window.slide = json['slide'];
+                
+                $.ajax({
+                    type: "POST",
+                    url: "/refresh_slide",
+                    cache: false,
+                    success: function(html) {
+                        $('#slide').html(html);
+                    }
+                });
+            }
+        }}
+    );
+
+}, 200);
+
+</script>
+
+<div id="slide">
+</div>
+
+
