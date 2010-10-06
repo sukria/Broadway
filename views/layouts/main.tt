@@ -11,6 +11,7 @@
 <!-- JavaScripts -->
 <script type="text/javascript" src="<% request.base %>/javascripts/jquery.js"></script>
 <script type="text/javascript" src="<% request.base %>/javascripts/prettify.js"></script>
+<script type="text/javascript" src="<% request.base %>/javascripts/broadway.js"></script>
 
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 </head>

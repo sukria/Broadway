@@ -1,36 +1,10 @@
-<script type="text/javascript" language="javascript">
-
-function on_next() {
-    $.ajax({
-        type: "POST",
-        url: "/next",
-        cache: false,
-        success: function(html){
-            1;
-        }
-    });
-}
-
-function on_prev() {
-    $.ajax({
-        type: "POST",
-        url: "/prev",
-        cache: false,
-        success: function(html){
-           1; 
-        }
-    });
-}
-
-</script>
-
 <h1>Broadway Remote Controller</h1>
 
 <p>
-<a href="#" onClick="on_prev();return(false);">Prev</a>
+<a href="#" onClick="broadway_prev();return(false);">Prev</a>
 
 <br />
 
-<a href="#" onClick="on_next();return(false);">Next</a>
+<a href="#" onClick="broadway_next();return(false);">Next</a>
 </p>
 
