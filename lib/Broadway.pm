@@ -4,14 +4,12 @@ our $VERSION = '0.1';
 
 use Dancer::Plugin::Ajax;
 
-my $SLIDE = 1;
-
-get '/test' => sub { template 'test' };
+my $SLIDE = 0;
 
 sub display_slide {
     my ($slide) = @_;
     $slide = sprintf('%03d', $slide);
-    return template("slide-$slide");
+    return template("slide-$slide", {slide => $SLIDE});
 }
 
 get '/' => sub { 
@@ -31,7 +29,7 @@ ajax '/next' => sub {
 
 ajax '/prev' => sub {
     my $nbslides = config->{broadway}{slides};
-    $SLIDE-- if $SLIDE > 1;
+    $SLIDE-- if $SLIDE > 0;
 };
 
 ajax '/current_slide' => sub {

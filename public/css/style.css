@@ -13,6 +13,7 @@ h1, h2, h3 {
 	margin: 0.2em; 
 	margin-top: 0;
 	padding:0;
+    padding-bottom: 1em;
 }
 
 h1 { font-size: 92px; }
@@ -21,18 +22,24 @@ h3 { font-size: 52px; }
 
 p, ul, li { 
 	margin: 0;
-	padding: 0;
-	font-size: 64px; 
+	padding: 0.2em;
+	font-size: 54px; 
 }
 
 ul { margin-left: 2em; }
 
 p { text-align: center; }
 
+
 pre { 
 	margin-top: 1em; 
 	font-size: 38px; 
+    margin-left: 2em;
     font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
+}
+
+em {
+    color: #ccf;
 }
 
 #slide {
@@ -42,6 +49,30 @@ pre {
 	vertical-align: middle;
 	display: table-cell;
 
-	height: 580px;
+	height: 560px;
 	width: 1024px;
 }
+
+#footer {
+    border-top: 2px solid #222;
+    margin: 0;
+    padding: 0.3em;
+    font-size: 16px;
+    color: #444;
+}
+
+#footer span {
+    margin-right: 1em;
+}
+
+#footer span.title {
+font-weight: bold;
+position: absolute;
+left: 460px;
+}
+
+#footer span.author {
+    position: absolute;
+    right: 4px;
+}
+

@@ -19,5 +19,12 @@
 
     <% content %>
 
+<div id="footer">
+<span><% settings.broadway.event %></span>
+<span><% settings.broadway.date %></span>
+<span class="title"><% settings.broadway.title %></span>
+<span class="author"><% settings.broadway.author %></span>
+</div>
+
 </body>
 </html>

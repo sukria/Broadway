@@ -5,6 +5,10 @@ appname: "Broadway"
 
 # broadway
 broadway:
-  slides: 4
+  title: "Perl Dancer"
+  date: "Oct. 9, 2010"
+  event: "OSDCfr 2010"
+  author: "Alexis Sukrieh"
+  slides: 50
   refresh_rate: 500
 

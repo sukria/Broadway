@@ -1,0 +1,281 @@
+<center>
+<h1>Perl Dancer</h1>
+
+<img src="/images/perldancer.png">
+
+<h3>
+The easiest way to write <br />
+web applications with Perl
+</h3>
+<center>
+
+===
+
+<h1>What</h1>
+
+===
+
+<p>
+web framework <br>
+for Perl
+</p>
+
+===
+
+<p>
+<em>micro</em> <br>
+web framework <br>
+for Perl
+</p>
+
+===
+
+<p>
+<em>elegant</em> <br>
+web framework <br>
+for Perl
+</p>
+
+===
+<p>
+<em>effective</em> <br>
+web framework <br>
+for Perl
+</p>
+
+===
+
+<p>
+<em>fun</em> <br>
+web framework <br>
+for Perl
+</p>
+
+===
+
+<h2>YES</h2>
+
+<p>
+It's all that, <br />
+and even more
+</p>
+
+===
+
+<h1>Why</h1>
+
+===
+
+<h3>The legacy</h3>
+
+<center><img src="/images/castle.jpg"></center>
+
+<p>
+CGI.pm
+</p>
+
+===
+
+<h3>The big sister</h3>
+
+<center><img src="/images/optimus.jpg"></center>
+
+<p>Catalyst</p>
+
+===
+
+<p>Still not satisfied</p>
+
+
+===
+
+<p>Want Perl</p>
+
+===
+
+<p>Want Web</p>
+
+===
+
+<p>Want something else...
+
+===
+
+<h2>The inspiration</h2>
+
+<center><img src="/images/sinatra.png"></center>
+
+<p>
+Sinatra (Ruby)
+</p>
+
+=== 
+
+<h2>The structure</h2>
+
+<center><img src="/images/psgi.jpg"></center>
+
+<p>PSGI</p>
+
+===
+
+<h2>And we dance</h2>
+
+<pre class="prettyprint">
+#!/usr/bin/perl
+use Dancer;
+
+get '/' => sub {
+    "Hello, world!";
+};
+
+dance;
+</pre>
+
+===
+
+<h1>How</h1>
+
+===
+<h2>Installation</h2>
+
+<ul>
+<li>Easy (few deps)
+<li>Standalone server
+<li>zero-conf (up to you)
+<li>effortless
+
+===
+
+<h2>Routes</h2>
+
+<p>routes are Dancer's wires</p>
+
+===
+<h2>Static</h2>
+
+<pre class="prettyprint">
+get '/something' => sub { 
+    "static route"; 
+};
+</pre>
+
+===
+
+<h2>Named tokens</h2>
+
+<pre class="prettyprint">
+get '/profile/:user' => sub { 
+    "user: ".params->{'user'};
+};
+</pre>
+
+===
+
+<h2>Wildcards</h2>
+
+<pre class="prettyprint">
+get '/file/*.*' => sub { 
+    my ($file, $ext) = splat;
+    # ...
+};
+</pre>
+
+===
+
+<h2>Pure Perl regexps</h2>
+
+<pre class="prettyprint">
+get qr{/([a-z]{2}[\d+])/} => sub { 
+    my ($match) = splat;
+    # ...
+};
+</pre>
+
+===
+
+This is Dancer's essentials
+
+=== 
+
+There is a lot more 
+
+===
+
+<p>
+Session, Templates, Logger, Plugins, DBI, DBIx::Class, Config, JSON, YAML, XML, filters ...
+</p>
+
+=== 
+
+<h1>Who</h1>
+
+===
+
+The move has started
+
+=== 
+
+<h2>YoolinkPro</h2>
+
+API Webserver
+
+===
+
+<h2>Linkfluence</h2>
+
+...
+
+===
+
+<h2>Novell</h2>
+
+<p>The Open Baracus project</p>
+
+===
+
+<h2>you and me</h2>
+
+<p>more and more enthusiast individuals use Dancer</p>
+
+===
+
+<h1>When</h1>
+
+===
+
+<h2>Dancer 1.2</h2>
+
+<ul>
+<li>work in progress
+<li>almost here
+<li>we want it rocksolid
+</ul>
+
+===
+
+<h1>Proof?</h1>
+
+===
+
+<h1>Well, you want a live demo?</h1>
+
+===
+
+<h1>You already had one</h1>
+
+===
+
+<h1>Seriously</h1>
+
+===
+
+<h1>This all presentation was powered by Dancer</h1>
+
+===
+
+<h1>Let's see the code</h1>
+
+===
+
+<h1>Vim time</h1>
