@@ -1,7 +1,10 @@
 layout: "main"
-logger: "file"
+logger: "console"
 charset: "utf8"
 appname: "Broadway"
 
-slides: 4
+# broadway
+broadway:
+  slides: 4
+  refresh_rate: 500
 

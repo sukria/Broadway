@@ -24,7 +24,7 @@ window.setInterval(function() {
         }}
     );
 
-}, 200);
+}, <% settings.broadway.refresh_rate %>);
 
 </script>
 

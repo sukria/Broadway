@@ -11,7 +11,6 @@ get '/test' => sub { template 'test' };
 sub display_slide {
     my ($slide) = @_;
     $slide = sprintf('%03d', $slide);
-    debug "using template : slide-$slide";
     return template("slide-$slide");
 }
 
@@ -26,12 +25,12 @@ ajax '/refresh_slide' => sub {
 # API
 
 ajax '/next' => sub {
-    my $nbslides = config->{slides};
+    my $nbslides = config->{broadway}{slides};
     $SLIDE++ if $SLIDE < $nbslides;
 };
 
 ajax '/prev' => sub {
-    my $nbslides = config->{slides};
+    my $nbslides = config->{broadway}{slides};
     $SLIDE-- if $SLIDE > 1;
 };
 

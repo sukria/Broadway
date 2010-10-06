@@ -1,10 +1,12 @@
-<h2>This is come code</h2>
+<h2>Dancing is easy</h2>
 
-<pre class="prettyprint">
-    use FooApp;
+<ul>
+<li>elegant 
+<li>expressive
+<li>Convention over Configuration
+<li>hack-and-play
+<li>extensible
+<li>Fun!
+</ul>
 
-    get '/' => sub { "code" };
 
-    dance();
-
-</pre>

@@ -4,31 +4,44 @@ body {
     padding: 0;
     background-color: #000;
     font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-    font-size: 13px;
+    font-size: 48px;
     color: #fff;
 }
 
-h1, h2, h3 { text-align: center;  margin-top: 0;}
-h1 { font-size: 72px; }
-h2 { font-size: 64px; }
-h3 { font-size: 48px; }
+h1, h2, h3 { 
+	text-align: center; 
+	margin: 0.2em; 
+	margin-top: 0;
+	padding:0;
+}
 
-p, ul, li { font-size: 36px; }
+h1 { font-size: 92px; }
+h2 { font-size: 72px; }
+h3 { font-size: 52px; }
 
-pre { font-size: 32px; }
+p, ul, li { 
+	margin: 0;
+	padding: 0;
+	font-size: 64px; 
+}
 
-pre, code {
+ul { margin-left: 2em; }
+
+p { text-align: center; }
+
+pre { 
+	margin-top: 1em; 
+	font-size: 38px; 
     font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
 }
 
-#content {
-	background-color: white;
-	border: 3px solid #aaa;
-	border-top: none;
-}
-
 #slide {
-    padding: 3em;
-    width: 90%;
-    margin: auto;
+    padding: 0;
+	margin: 0;
+
+	vertical-align: middle;
+	display: table-cell;
+
+	height: 580px;
+	width: 1024px;
 }
