@@ -1,0 +1,10 @@
+<h2>This is come code</h2>
+
+<pre class="prettyprint">
+    use FooApp;
+
+    get '/' => sub { "code" };
+
+    dance();
+
+</pre>

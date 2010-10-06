@@ -3,11 +3,18 @@
 <html>
 <head>
 <title>Broadway</title>
+
+<!-- CSS -->
 <link rel="stylesheet" href="/css/style.css" />
-<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<link href="<% request.base %>/css/prettify.css" type="text/css" rel="stylesheet" />
+
+<!-- JavaScripts -->
+<script type="text/javascript" src="<% request.base %>/javascripts/jquery.js"></script>
+<script type="text/javascript" src="<% request.base %>/javascripts/prettify.js"></script>
+
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 </head>
-<body>
+<body onload="prettyPrint();">
 
     <% content %>
 

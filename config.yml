@@ -3,5 +3,5 @@ logger: "file"
 charset: "utf8"
 appname: "Broadway"
 
-slides: 3
+slides: 4
 

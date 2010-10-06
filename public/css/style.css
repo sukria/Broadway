@@ -1,27 +1,30 @@
-
 body {
-/*font-family: 'Linux Libertine', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;*/
-margin: 0;
-padding: 0;
-background-color: #000;
-font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-font-size: 13px;
-color: #fff;
+    /*font-family: 'Linux Libertine', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, 'Times New Roman', serif;*/
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+    font-size: 13px;
+    color: #fff;
 }
 
-h1 { font-size: 72px; margin-top: 0; }
-h2 { font-size: 72px; }
-h3 { font-size: 64px; }
-p { font-size: 42px; margin-bottom: 0;}
+h1, h2, h3 { text-align: center;  margin-top: 0;}
+h1 { font-size: 72px; }
+h2 { font-size: 64px; }
+h3 { font-size: 48px; }
+
+p, ul, li { font-size: 36px; }
+
+pre { font-size: 32px; }
+
+pre, code {
+    font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
+}
 
 #content {
 	background-color: white;
 	border: 3px solid #aaa;
 	border-top: none;
-}
-
-code {
-    font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
 }
 
 #slide {

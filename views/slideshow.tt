@@ -17,6 +17,7 @@ window.setInterval(function() {
                     cache: false,
                     success: function(html) {
                         $('#slide').html(html);
+                        prettyPrint();
                     }
                 });
             }

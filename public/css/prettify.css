@@ -1,0 +1,19 @@
+.str { color:#f1c40e }
+.kwd { color:#b260d0 }
+.com { color:#7dabd7 }
+.typ { color:#7dabd7 }
+.lit { color:#cee }
+.pun { color:#eec }
+.pln { color:#ccc }
+.tag { color:#ccf }
+.atn { color:#fdc }
+.atv { color:#cec }
+.dec { color:#eec }
+
+pre.prettyprint {
+    margin: 0;
+    padding: 0;
+    padding-left: 0.1em;
+    border-left: 2px solid #444;
+} 
+
