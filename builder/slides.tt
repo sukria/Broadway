@@ -1,7 +1,7 @@
 <center>
 <h1>Perl Dancer</h1>
 
-<img src="/images/perldancer.png">
+<img src="/images/perldancer.png" style="border: 0">
 
 <h3>
 The easiest way to write <br />
@@ -83,7 +83,7 @@ and even more
 
 ===
 
-<h3>The legacy</h3>
+<h2>The legacy</h2>
 
 <center><img src="/images/castle.jpg"></center>
 
