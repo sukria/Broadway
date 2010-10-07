@@ -1,8 +1,7 @@
 package Broadway;
 use Dancer ':syntax';
-our $VERSION = '0.1';
-
 use Dancer::Plugin::Ajax;
+our $VERSION = '0.1';
 
 my $SLIDE = 0;
 

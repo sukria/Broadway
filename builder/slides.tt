@@ -46,7 +46,24 @@ for Perl
 ===
 
 <p>
+<em>CPAN-friendly</em> <br>
+web framework <br>
+for Perl
+</p>
+
+===
+
+
+<p>
 <em>fun</em> <br>
+web framework <br>
+for Perl
+</p>
+
+===
+
+<p>
+<em>PSGI</em> <br>
 web framework <br>
 for Perl
 </p>
@@ -84,8 +101,7 @@ CGI.pm
 
 ===
 
-<p>Still not satisfied</p>
-
+<p>not satisfied</p>
 
 ===
 
@@ -97,7 +113,7 @@ CGI.pm
 
 ===
 
-<p>Want something else...
+<p>Want Lightweight</p>
 
 ===
 
@@ -144,6 +160,19 @@ dance;
 <li>Standalone server
 <li>zero-conf (up to you)
 <li>effortless
+
+===
+
+<h2>Development</h2>
+
+<pre class="prettyprint">
+$ dancer -a SuperApp
+...
+$ cd SuperApp
+$ ./bin/app.pl
+>> Dancer server 23482 listening on http://0.0.0.0:3000
+== Entering the development dance floor ...
+</pre>
 
 ===
 
@@ -194,16 +223,42 @@ get qr{/([a-z]{2}[\d+])/} => sub {
 
 ===
 
-This is Dancer's essentials
+<h2>filters</h2>
 
-=== 
+<pre class="prettyprint">
+before sub { 
+    if (request->path_info =~ /^\/home/) {
+        if (not session('user_id')) {
+            redirect '/login';
+        }
+    }
+};
 
-There is a lot more 
+# routes ...
+</pre>
 
 ===
 
-<p>
-Session, Templates, Logger, Plugins, DBI, DBIx::Class, Config, JSON, YAML, XML, filters ...
+<p>This is Dancer's essentials</p>
+
+=== 
+
+<p>There is a lot more </p>
+
+===
+
+<p style="font-size: 28px;">
+Dancer::Route::<em>Cache</em> Dancer::Template::Simple Dancer::Template::TemplateToolkit 
+Dancer::Session::YAML Dancer::Test Dancer::Session::Simple Dancer::Plugin::<em>DBIC</em>
+Dancer::Plugin::<em>Database</em> Dancer::Template::Tenjin Dancer::Template::HtmlTemplate
+Dancer::Template::Alloy Dancer::Template::Ctpp2 Dancer::Template::TemplateSandbox
+Task::Dancer Dancer::Plugin::<em>Email</em> Dancer::Session::Storable Dancer::Plugin::<em>REST</em>
+Dancer::Logger::<em>Syslog</em> Dancer::Template::Tiny Dancer::Plugin::SiteMap Dancer::Template::Haml
+Dancer::Template::MicroTemplate Dancer::Template::Xslate Dancer::Session::<em>Memcache</em>
+Dancer::Session::Cookie Dancer::Template::Mason Dancer::Plugin::<em>Ajax</em> Dancer::Plugin::Authorize
+Dancer::Logger::<em>PSGI</em> Dancer::Serializer::XML Dancer::Serializer::Mutable Dancer::Serializer::<em>JSON</em>
+Dancer::Cookie Dancer::<em>Serializer</em>::YAML Dancer::Logger::LogHandler Dancer::Session::<em>MongoDB</em>
+Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug 
 </p>
 
 === 
@@ -212,25 +267,38 @@ Session, Templates, Logger, Plugins, DBI, DBIx::Class, Config, JSON, YAML, XML, 
 
 ===
 
-The move has started
+<p>The move has started</p>
 
 === 
 
 <h2>YoolinkPro</h2>
 
-API Webserver
+<ul>
+<li>API Webserver
+<li>Request Authentication (key signatures)
+<li>REST with Dancer::Plugin::REST
+</ul>
 
 ===
 
 <h2>Linkfluence</h2>
 
-...
+<ul>
+<li>Dancer-powered websites
+<li><a href="http://jitterbug.perldancer.org">Jitterbug</a> (Franck Cuny)
+</ul>
 
 ===
 
-<h2>Novell</h2>
+<h2>Novell: Baracus</h2>
 
-<p>The Open Baracus project</p>
+<ul>
+<li><a href="http://baracus-project.org">http://baracus-project.org</a>
+<li>Enterprise boot and build management
+<li>Dancer frontend web engine
+<li>Complete REST API
+<li>OpenSuse packages
+</ul>
 
 ===
 
@@ -254,27 +322,38 @@ API Webserver
 
 ===
 
-<h1>Proof?</h1>
+<h1>Demo?</h1>
 
 ===
 
-<h1>Well, you want a live demo?</h1>
+<p>You already had one</p>
 
 ===
 
-<h1>You already had one</h1>
+<p>seriously</p>
 
 ===
 
-<h1>Seriously</h1>
+<p>
+This all presentation <br />
+was powered by Dancer
+</p>
 
 ===
 
-<h1>This all presentation was powered by Dancer</h1>
+
+<center><img src="/images/broadway.jpg"></center>
 
 ===
 
-<h1>Let's see the code</h1>
+<h2>Broadway</h2>
+
+<ul>
+<li>a slideshow engine
+<li>Ajax-based
+<li>with remote controll
+<li>less than 50 lines of Dancer
+</ul>
 
 ===
 

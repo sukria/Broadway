@@ -8,7 +8,7 @@ var KEY_SPACE = 0;
 var KEY_ORIG  = 36;
 var KEY_END   = 35;
 
-<% if config.broadway.remote %>
+<% if settings.broadway.remote %>
 
 window.setInterval(function() {
     $.ajax({
