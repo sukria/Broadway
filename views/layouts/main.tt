@@ -27,6 +27,7 @@
         <span><% settings.broadway.date %></span>
         <span class="title"><% settings.broadway.title %></span>
         <span class="author"><% settings.broadway.author %></span>
+        <span id="slide_number" style="position: absolute; right: 2px;"></span>
     </div>
 </body>
 </html>

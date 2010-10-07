@@ -1,15 +1,7 @@
 <script type="text/javascript" language="javascript">
-
 window.slide = 0;
 
-var KEY_RIGHT = 39;
-var KEY_LEFT  = 37;
-var KEY_SPACE = 0;
-var KEY_ORIG  = 36;
-var KEY_END   = 35;
-
 <% if settings.broadway.remote %>
-
 window.setInterval(function() {
     $.ajax({
         type: 'POST', 
@@ -25,21 +17,7 @@ window.setInterval(function() {
 
 }, <% settings.broadway.refresh_rate %>);
 <% end %>
-
 </script>
 
 <div id="slide">
 </div>
-
-<script>
-$(document).keypress(function(e) {
-    if(e.keyCode == KEY_LEFT) {
-        broadway_prev();
-        broadway_refresh();
-    }
-    else if (e.keyCode == KEY_RIGHT) {
-        broadway_next();
-        broadway_refresh();
-    }
-});
-</script>
