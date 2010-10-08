@@ -19,26 +19,23 @@ body {
 
 img {
     margin: 0.5em;
-    border: 1px solid #777;
     padding: 2px;
 }
 
 h1, h2, h3 { 
 	text-align: center; 
-	margin: 0.1em; 
-	margin-top: 0;
+	margin: 0; 
 	padding:0;
-    padding-bottom: 0.5em;
 }
 
-h1 { font-size: 92px; }
+h1 { font-size: 82px; }
 h2 { font-size: 72px; }
-h3 { font-size: 52px; }
+h3 { font-size: 62px; }
 
 p, ul, li { 
 	margin: 0;
 	padding: 0.1em;
-	font-size: 54px; 
+	font-size: 48px; 
 }
 
 ul { margin-left: 2em; }
@@ -49,7 +46,6 @@ p { text-align: center; }
 pre { 
 	margin-top: 1em; 
 	font-size: 32px; 
-    margin-left: 2em;
     font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
 }
 
@@ -65,6 +61,7 @@ pre, ul { text-align: left; }
     border-top: 2px solid #222;
     margin: 0;
     padding: 0;
+	padding-top: 4px;
     text-align: center;
     font-size: 16px;
     color: #444;

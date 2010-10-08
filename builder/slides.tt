@@ -93,11 +93,13 @@ CGI.pm
 
 ===
 
+<img src="/images/optimus.jpg" style="float: left;">
+<div style="padding-top: 1em;">
 <h3>The big sister</h3>
 
-<center><img src="/images/optimus.jpg"></center>
 
-<p>Catalyst</p>
+<p style="padding-top: 2em;">Catalyst</p>
+</div>
 
 ===
 
@@ -114,6 +116,10 @@ CGI.pm
 ===
 
 <p>Want Lightweight</p>
+
+===
+
+<p>Want Modern Programming</p>
 
 ===
 
@@ -165,12 +171,12 @@ dance;
 
 <h2>Development</h2>
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="font-size: 32px;">
 $ dancer -a SuperApp
 ...
 $ cd SuperApp
 $ ./bin/app.pl
->> Dancer server 23482 listening on http://0.0.0.0:3000
+>> Dancer server 23482 listening...
 == Entering the development dance floor ...
 </pre>
 
@@ -233,8 +239,49 @@ before sub {
         }
     }
 };
+</pre>
 
-# routes ...
+===
+
+<h2>Templates</h2>
+
+<pre class="prettyprint">
+
+get '/' => sub {
+    template 'index', { somevar => 101010 };
+};
+
+===
+
+<h2>Serializers</h2>
+
+
+<pre class="prettyprint">
+set serializer => 'JSON';
+
+get '/data' => sub {
+    return {foo => 42};
+};
+
+$ curl http://0:3000/data
+"{foo: 42}"
+
+</pre>
+
+===
+
+<h2>Plugins</h2>
+
+<pre class="prettyprint">
+
+use Dancer::Plugin::Database;
+
+get '/user/:id' => sub {
+    my $id = params->{'id'},
+    my $user = database->selectall_hashref(
+        "SELECT * from users where id = $id"
+	);
+};
 </pre>
 
 ===
@@ -247,7 +294,7 @@ before sub {
 
 ===
 
-<p style="font-size: 28px;">
+<p style="font-size: 24px;">
 Dancer::Route::<em>Cache</em> Dancer::Template::Simple Dancer::Template::TemplateToolkit 
 Dancer::Session::YAML Dancer::Test Dancer::Session::Simple Dancer::Plugin::<em>DBIC</em>
 Dancer::Plugin::<em>Database</em> Dancer::Template::Tenjin Dancer::Template::HtmlTemplate

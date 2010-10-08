@@ -12,6 +12,14 @@ ajax '/prev' => sub {
     Broadway::Slide->prev;
 };
 
+ajax '/last' => sub {
+    Broadway::Slide->go(config->{broadway}{slides});
+};
+
+ajax '/first' => sub {
+    Broadway::Slide->go(0);
+};
+
 ajax '/current_slide' => sub {
     content_type 'application/json';
     to_json({ slide => Broadway::Slide->current });

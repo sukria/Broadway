@@ -20,6 +20,28 @@ function broadway_prev() {
     });
 }
 
+function broadway_first() {
+    $.ajax({
+        type: "POST",
+        url: "/first",
+        cache: false,
+        success: function(html){
+           1; 
+        }
+    });
+}
+
+function broadway_last() {
+    $.ajax({
+        type: "POST",
+        url: "/last",
+        cache: false,
+        success: function(html){
+           1; 
+        }
+    });
+}
+
 function broadway_refresh() {
     $.ajax({
         type: "POST",
@@ -28,7 +50,9 @@ function broadway_refresh() {
         success: function(html) {
 
             // replace the slide content
+			$('#slide').hide();
             $('#slide').html(html);
+			$('#slide').fadeIn('slow', function(){1});
 
             // syntax highlighting
             prettyPrint();
@@ -60,10 +84,18 @@ $(document).ready(function() {
             broadway_prev();
             broadway_refresh();
         }
-        else if (e.keyCode == KEY_RIGHT) {
+        else if (e.keyCode == KEY_RIGHT || e.keyCode == KEY_SPACE) {
             broadway_next();
             broadway_refresh();
         }
+		else if (e.keyCode == KEY_ORIG) {
+			broadway_first();
+            broadway_refresh();
+		}
+		else if (e.keyCode == KEY_END) {
+			broadway_last();
+            broadway_refresh();
+		}
     });
 
     // display the current slide
