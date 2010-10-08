@@ -1,7 +1,24 @@
 <script type="text/javascript" language="javascript">
 window.slide = 0;
 
-<% if settings.broadway.remote %>
+<% if is_multi_touch %>
+window.broadway_effects = 0;
+
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+    point_x = event.touches[0].pageX;
+    if (point_x < 450) {
+        broadway_prev();
+    }
+    else {
+        broadway_next();
+    }
+    broadway_refresh();
+}, false);
+
+<% else %>
+
+window.broadway_effects = 1;
 window.setInterval(function() {
     $.ajax({
         type: 'POST', 
@@ -16,7 +33,10 @@ window.setInterval(function() {
     );
 
 }, <% settings.broadway.refresh_rate %>);
+
+
 <% end %>
+
 </script>
 
 <div id="slide">

@@ -50,9 +50,14 @@ function broadway_refresh() {
         success: function(html) {
 
             // replace the slide content
-			$('#slide').hide();
-            $('#slide').html(html);
-			$('#slide').fadeIn('slow', function(){1});
+            if (window.broadway_effects) {
+    			$('#slide').hide();
+                $('#slide').html(html);
+    			$('#slide').fadeIn('slow', function(){1});
+            }
+            else {
+                $('#slide').html(html);
+            }
 
             // syntax highlighting
             prettyPrint();
