@@ -88,7 +88,7 @@ and even more
 <center><img src="/images/castle.jpg"></center>
 
 <p>
-CGI.pm
+CGI.pm 
 </p>
 
 ===
@@ -100,26 +100,6 @@ CGI.pm
 
 <p style="padding-top: 2em;">Catalyst</p>
 </div>
-
-===
-
-<p>not satisfied</p>
-
-===
-
-<p>Want Perl</p>
-
-===
-
-<p>Want Web</p>
-
-===
-
-<p>Want Lightweight</p>
-
-===
-
-<p>Want Modern Programming</p>
 
 ===
 
@@ -171,7 +151,7 @@ dance;
 
 <h2>Development</h2>
 
-<pre class="prettyprint" style="font-size: 32px;">
+<pre style="font-size: 32px;">
 $ dancer -a SuperApp
 ...
 $ cd SuperApp
@@ -182,11 +162,44 @@ $ ./bin/app.pl
 
 ===
 
+<h2>Deployment</h2>
+
+<p>
+Thanks to PSGI/Plack we can <br />
+deploy vritually anywhere
+</p>
+
+===
+
 <h2>Routes</h2>
 
 <p>routes are Dancer's wires</p>
 
 ===
+
+<h2>Route Handler</h2>
+
+<ul>
+<li>HTTP method
+<li>path 
+<li>subroutine
+</ul>
+
+===
+
+<pre style="text-align: center; font-size: 62px;">
+<span id="method" style="display: none;">get</span> <span id="path" style="display: none;">"/"</span> <span id="sub" style="display: none;">=&gt; sub { }; </span>
+</pre>
+
+<script>
+    $('#method').fadeIn('slow', function() {
+        $('#path').fadeIn('slow', function() {
+            $('#sub').fadeIn('slow');
+        });
+    });
+</script>
+===
+
 <h2>Static</h2>
 
 <pre class="prettyprint">
@@ -355,16 +368,41 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 
 ===
 
+<h2>Community</h2>
+
+<ul>
+<li>More 160 GitHub watchers
+<li>40 GitHub forks
+<li>Very active core team
+<li>More than 90% code coverage
+</ul>
+
+===
+
 <h1>When</h1>
+
+===
+
+<h2>Now!</h2>
+
+<p>Dancer is already <br />
+usable and pretty stable</p>
+
+===
+
+<h2>But soon...</h2>
+
+<p>We're preparing a rocksolid release</p>
 
 ===
 
 <h2>Dancer 1.2</h2>
 
 <ul>
-<li>work in progress
-<li>almost here
-<li>we want it rocksolid
+<li>New website
+<li>Improved documentation
+<li>Improved Plack support
+<li>T-shirts!
 </ul>
 
 ===
@@ -382,7 +420,7 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 ===
 
 <p>
-This all presentation <br />
+This whole presentation <br />
 was powered by Dancer
 </p>
 
@@ -390,6 +428,8 @@ was powered by Dancer
 
 
 <center><img src="/images/broadway.jpg"></center>
+
+<p>Dancer-based Slideshow engine</p>
 
 ===
 
