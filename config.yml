@@ -2,6 +2,12 @@ layout: "main"
 logger: "console"
 charset: "utf8"
 appname: "Broadway"
+route_cache: 0
+template: "template_toolkit"
+engines:
+  template_toolkit:
+    COMPILE_EXT: ".ttc" 
+    COMPILE_DIR: "/tmp/ttcompile"
 
 # broadway
 broadway:
@@ -10,6 +16,6 @@ broadway:
   event: "OSDCfr 2010"
   author: "Alexis Sukrieh"
   slides: 52
-  refresh_rate: 1000
+  refresh_rate: 1300
   remote: 1
 

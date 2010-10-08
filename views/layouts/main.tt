@@ -29,5 +29,13 @@
         <span class="author"><% settings.broadway.author %></span>
         <span id="slide_number" style="position: absolute; right: 2px;"></span>
     </div>
+
+<% if is_multi_touch %>
+<div id="remote">
+REMOTE : <% request.agent %>
+</div>
+<% end %>
+
+
 </body>
 </html>

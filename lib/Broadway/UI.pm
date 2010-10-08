@@ -5,14 +5,6 @@ use Dancer::Plugin::Ajax;
 
 use Broadway::Slide;
 
-before_template sub { 
-    my $tokens = shift;
-    if (request->user_agent =~ /Android|iPhone/i) {
-        debug "is_multi_touch : ".request->user_agent;
-        $tokens->{is_multi_touch} = 1;
-    }
-};
-
 sub display_slide {
     my ($slide) = @_;
     $slide = sprintf('%03d', $slide);

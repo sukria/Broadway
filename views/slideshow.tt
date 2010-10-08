@@ -8,9 +8,11 @@ document.addEventListener('touchmove', function(event) {
     event.preventDefault();
     point_x = event.touches[0].pageX;
     if (point_x < 450) {
+        $('#slide').html('<font style="color: #000; background-color: #e1b737;">Loading previous slide ...</font>');
         broadway_prev();
     }
     else {
+        $('#slide').html('<font style="color: #000; background-color: #e1b737;">Loading next slide ...</font>');
         broadway_next();
     }
     broadway_refresh();
@@ -41,3 +43,4 @@ window.setInterval(function() {
 
 <div id="slide">
 </div>
+
