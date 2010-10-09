@@ -16,6 +16,6 @@ broadway:
   event: "OSDCfr 2010"
   author: "Alexis Sukrieh"
   slides: 52
-  refresh_rate: 1300
+  refresh_rate: 600
   remote: 1
 

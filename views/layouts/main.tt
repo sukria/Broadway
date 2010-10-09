@@ -36,6 +36,13 @@ REMOTE : <% request.agent %>
 </div>
 <% end %>
 
+<table>
+  <tr>
+    <td>
+      <div style="font-size: 18px;" id="previous_slide">
+      </div>
+  </tr>
+</table>
 
 </body>
 </html>

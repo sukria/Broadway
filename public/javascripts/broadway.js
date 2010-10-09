@@ -42,6 +42,7 @@ function broadway_last() {
     });
 }
 
+
 function broadway_refresh() {
     $.ajax({
         type: "POST",
@@ -51,7 +52,7 @@ function broadway_refresh() {
 
             // replace the slide content
             if (window.broadway_effects) {
-    			$('#slide').hide();
+    			//$('#slide').style('display: none');
                 $('#slide').html(html);
     			$('#slide').fadeIn('slow', function(){1});
             }
@@ -63,7 +64,7 @@ function broadway_refresh() {
             prettyPrint();
 
             // update the slide number (it's in the layout)
-            $.ajax({
+			$.ajax({
                 type: 'POST', 
                 url: '/current_slide',
                 cache: false,
@@ -83,27 +84,35 @@ var KEY_END   = 35;
 
 $(document).ready(function() {
 
+	window.pending_keypress = 0;
+
     // register key bindings
     $(document).keypress(function(e) {
-        if(e.keyCode == KEY_LEFT) {
+        if(e.keyCode == KEY_LEFT && (!window.pending_keypress)) {
+			window.pending_keypress = 1;
             broadway_prev();
             broadway_refresh();
+			window.pending_keypress = 0;
         }
-        else if (e.keyCode == KEY_RIGHT || e.keyCode == KEY_SPACE) {
+        else if (e.keyCode == KEY_RIGHT && (!window.pending_keypress)) {
+			window.pending_keypress = 1;
             broadway_next();
             broadway_refresh();
+			window.pending_keypress = 0;
         }
-		else if (e.keyCode == KEY_ORIG) {
+		else if (e.keyCode == KEY_ORIG && (!window.pending_keypress)) {
+			window.pending_keypress = 1;
 			broadway_first();
             broadway_refresh();
+			window.pending_keypress = 0;
 		}
-		else if (e.keyCode == KEY_END) {
+		else if (e.keyCode == KEY_END && (!window.pending_keypress)) {
+			window.pending_keypress = 1;
 			broadway_last();
             broadway_refresh();
+			window.pending_keypress = 0;
 		}
     });
-
-    // display the current slide
-    broadway_refresh();
+	broadway_refresh();
 });
 

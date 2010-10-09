@@ -11,6 +11,14 @@ sub display_slide {
     return template("slide-$slide");
 }
 
+before_template sub { 
+    my $tokens = shift;
+    if (request->agent =~ /Android|iPhone/i) {
+        debug "is_multi_touch : ".request->user_agent;
+        $tokens->{is_multi_touch} = 1;
+    }
+};
+
 get '/' => sub { 
     template 'slideshow';
 };
@@ -21,11 +29,12 @@ get '/slide/:slide' => sub {
 };
 
 ajax '/refresh_slide' => sub {
-    display_slide(Broadway::Slide->current);
-};
-
-get '/remote' => sub {
-    template 'remote';
+    if (params->{'slide'}) {
+        display_slide(params->{'slide'});
+    }
+    else {
+        display_slide(Broadway::Slide->current);
+    }
 };
 
 1;

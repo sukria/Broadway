@@ -10,12 +10,13 @@ document.addEventListener('touchmove', function(event) {
     if (point_x < 450) {
         $('#slide').html('<font style="color: #000; background-color: #e1b737;">Loading previous slide ...</font>');
         broadway_prev();
+		broadway_refresh();
     }
     else {
         $('#slide').html('<font style="color: #000; background-color: #e1b737;">Loading next slide ...</font>');
         broadway_next();
+		broadway_refresh();
     }
-    broadway_refresh();
 }, false);
 
 <% else %>
@@ -36,11 +37,9 @@ window.setInterval(function() {
 
 }, <% settings.broadway.refresh_rate %>);
 
-
 <% end %>
 
 </script>
 
 <div id="slide">
 </div>
-

@@ -7,6 +7,10 @@ html,body {
     height: 100%;
 }
 
+a {
+	color: #bbf;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -31,12 +35,12 @@ h1, h2, h3 {
 
 h1 { font-size: 82px; }
 h2 { font-size: 72px; }
-h3 { font-size: 62px; }
+h3 { font-size: 60px; }
 
 p, ul, li { 
 	margin: 0;
 	padding: 0.1em;
-	font-size: 48px; 
+	font-size: 50px; 
 }
 
 ul { margin-left: 2em; }
@@ -46,7 +50,7 @@ p { text-align: center; }
 
 pre { 
 	margin-top: 1em; 
-	font-size: 32px; 
+	font-size: 36px; 
     font-family: 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
 }
 

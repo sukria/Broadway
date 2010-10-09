@@ -15,58 +15,58 @@ web applications with Perl
 
 ===
 
-<p>
+<h3>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
 
-<p>
+<h3>
 <em>micro</em> <br>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
 
-<p>
+<h3>
 <em>elegant</em> <br>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
-<p>
+<h3>
 <em>effective</em> <br>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
 
-<p>
+<h3>
 <em>CPAN-friendly</em> <br>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
 
 
-<p>
+<h3>
 <em>fun</em> <br>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
 
-<p>
+<h3>
 <em>PSGI</em> <br>
 web framework <br>
 for Perl
-</p>
+</h3>
 
 ===
 
@@ -165,8 +165,8 @@ $ ./bin/app.pl
 <h2>Deployment</h2>
 
 <p>
-Thanks to PSGI/Plack we can <br />
-deploy vritually anywhere
+Thanks to PSGI/Plack we<br />
+can deploy vritually anywhere
 </p>
 
 ===
@@ -246,11 +246,11 @@ get qr{/([a-z]{2}[\d+])/} => sub {
 
 <pre class="prettyprint">
 before sub { 
-    if (request->path_info =~ /^\/home/) {
-        if (not session('user_id')) {
-            redirect '/login';
-        }
-    }
+  if (request->path_info =~ /^\/home/) {
+      if (not session('user_id')) {
+          redirect '/login';
+      }
+  }
 };
 </pre>
 
@@ -261,7 +261,8 @@ before sub {
 <pre class="prettyprint">
 
 get '/' => sub {
-    template 'index', { somevar => 101010 };
+    template 'index', 
+      { somevar => 101010 };
 };
 
 ===
@@ -307,7 +308,7 @@ get '/user/:id' => sub {
 
 ===
 
-<p style="font-size: 24px;">
+<p style="font-size: 26px;">
 Dancer::Route::<em>Cache</em> Dancer::Template::Simple Dancer::Template::TemplateToolkit 
 Dancer::Session::YAML Dancer::Test Dancer::Session::Simple Dancer::Plugin::<em>DBIC</em>
 Dancer::Plugin::<em>Database</em> Dancer::Template::Tenjin Dancer::Template::HtmlTemplate
@@ -411,11 +412,11 @@ usable and pretty stable</p>
 
 ===
 
-<p>You already had one</p>
+<h3>You already had one</h3>
 
 ===
 
-<p>seriously</p>
+<h3>seriously</h3>
 
 ===
 
