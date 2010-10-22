@@ -1,5 +1,6 @@
 log: "warning"
 warnings: 0
+session: 'simple'
 show_errors: 0
 route_cache: 1
 # never enable auto_reload in production

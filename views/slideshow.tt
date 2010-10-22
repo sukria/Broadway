@@ -21,6 +21,7 @@ document.addEventListener('touchmove', function(event) {
 
 <% else %>
 
+<% if settings.broadway.remote %>
 window.broadway_effects = 1;
 window.setInterval(function() {
     $.ajax({
@@ -36,6 +37,7 @@ window.setInterval(function() {
     );
 
 }, <% settings.broadway.refresh_rate %>);
+<% end %>
 
 <% end %>
 
