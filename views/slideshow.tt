@@ -4,6 +4,7 @@ window.slide = 0;
 <% if is_multi_touch %>
 window.broadway_effects = 0;
 
+/*
 document.addEventListener('touchmove', function(event) {
     event.preventDefault();
     point_x = event.touches[0].pageX;
@@ -18,6 +19,8 @@ document.addEventListener('touchmove', function(event) {
 		broadway_refresh();
     }
 }, false);
+*/
+
 
 <% else %>
 
@@ -45,3 +48,5 @@ window.setInterval(function() {
 
 <div id="slide">
 </div>
+
+
