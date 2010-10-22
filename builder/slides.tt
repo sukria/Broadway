@@ -403,7 +403,7 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 
 ===
 
-<h2>Current rlease</h2>
+<h2>Current release</h2>
 
 <p>Dancer is already <br />
 usable and pretty stable</p>
@@ -465,3 +465,18 @@ was powered by Dancer
 ===
 
 <h1>Vim time</h1>
+
+===
+
+<h1><strike>Vim time</strike></h1>
+
+===
+
+<p>
+<a href="http://github.com/sukria/Broadway">Broadway on GitHub</a>
+</p>
+
+===
+
+<p>Thanks</p>
+
