@@ -2,5 +2,5 @@ ignore = ".yoolink-deploy-target,tmp"
 #prebuild = "build.sh"
 #postdeploy = "postdeploy.sh"
 
-archive_destination = "/usr/local/weborama/releases/broadway"
+archive_destination = "/usr/local/weborama/releases"
 destination = "/usr/local/weborama/broadway/prod"
