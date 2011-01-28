@@ -48,6 +48,9 @@ function broadway_refresh() {
         type: "POST",
         url: "/refresh_slide",
         cache: false,
+		error: function(failure) {
+			alert("unable to receive content");
+		},
         success: function(html) {
 
             // replace the slide content
