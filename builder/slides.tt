@@ -11,7 +11,7 @@ web applications with Perl
 
 ===
 
-<h1>What</h1>
+<h1>What is Dancer?</h1>
 
 ===
 
@@ -29,16 +29,16 @@ for Perl
 </h3>
 
 ===
-
 <h3>
-<em>elegant</em> <br>
+<em>effective</em> <br>
 web framework <br>
 for Perl
 </h3>
 
 ===
+
 <h3>
-<em>effective</em> <br>
+<em>elegant</em> <br>
 web framework <br>
 for Perl
 </h3>
@@ -52,7 +52,6 @@ for Perl
 </h3>
 
 ===
-
 
 <h3>
 <em>fun</em> <br>
@@ -79,7 +78,7 @@ and even more
 
 ===
 
-<h1>Why</h1>
+<h1>Origins</h1>
 
 ===
 
@@ -121,7 +120,7 @@ Sinatra (Ruby)
 
 ===
 
-<h2>And we dance</h2>
+<h2>Dancer</h2>
 
 <pre class="prettyprint">
 #!/usr/bin/perl
@@ -136,7 +135,7 @@ dance;
 
 ===
 
-<h1>How</h1>
+<h1>How to dance</h1>
 
 ===
 <h2>Installation</h2>
@@ -242,6 +241,21 @@ get qr{/([a-z]{2}[\d+])/} => sub {
 
 ===
 
+<h2>Configuration</h2>
+
+
+<pre class="prettyprint">
+# in my code
+setting 'foo' => 42;
+
+# or in my config.yml
+foo: 42
+
+# or in my environments/$ENV.yml
+foo: 42
+</pre>
+
+===
 <h2>filters</h2>
 
 <pre class="prettyprint">
@@ -269,7 +283,6 @@ get '/' => sub {
 
 <h2>Serializers</h2>
 
-
 <pre class="prettyprint">
 set serializer => 'JSON';
 
@@ -292,7 +305,7 @@ use Dancer::Plugin::Database;
 
 get '/user/:id' => sub {
     my $id = params->{'id'},
-    my $user = database->selectall_hashref(
+    database->selectall_hashref(
         "SELECT * from users where id = $id"
 	);
 };
@@ -308,15 +321,26 @@ get '/user/:id' => sub {
 
 ===
 
-<p style="font-size: 26px;">
+<p style="font-size: 36px;">
 Dancer::Route::<em>Cache</em> Dancer::Template::Simple Dancer::Template::TemplateToolkit 
 Dancer::Session::YAML Dancer::Test Dancer::Session::Simple Dancer::Plugin::<em>DBIC</em>
 Dancer::Plugin::<em>Database</em> Dancer::Template::Tenjin Dancer::Template::HtmlTemplate
 Dancer::Template::Alloy Dancer::Template::Ctpp2 Dancer::Template::TemplateSandbox
+</p>
+
+===
+
+
+<p style="font-size: 36px;">
 Task::Dancer Dancer::Plugin::<em>Email</em> Dancer::Session::Storable Dancer::Plugin::<em>REST</em>
 Dancer::Logger::<em>Syslog</em> Dancer::Template::Tiny Dancer::Plugin::SiteMap Dancer::Template::Haml
 Dancer::Template::MicroTemplate Dancer::Template::Xslate Dancer::Session::<em>Memcache</em>
 Dancer::Session::Cookie Dancer::Template::Mason Dancer::Plugin::<em>Ajax</em> Dancer::Plugin::Authorize
+</p>
+
+===
+
+<p style="font-size: 42px;">
 Dancer::Logger::<em>PSGI</em> Dancer::Serializer::XML Dancer::Serializer::Mutable Dancer::Serializer::<em>JSON</em>
 Dancer::Cookie Dancer::<em>Serializer</em>::YAML Dancer::Logger::LogHandler Dancer::Session::<em>MongoDB</em>
 Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug 
@@ -324,13 +348,13 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 
 === 
 
-<h1>Who</h1>
+<h2>It's a living ecosystem</h2>
 
 ===
 
-<p>The move has started</p>
+<h1>How trustable</h1>
 
-=== 
+===
 
 <h2>YoolinkPro</h2>
 
@@ -358,7 +382,6 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 <li>Enterprise boot and build management
 <li>Dancer frontend web engine
 <li>Complete REST API
-<li>OpenSuse packages
 </ul>
 
 ===
@@ -380,11 +403,7 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 
 ===
 
-<h1>When</h1>
-
-===
-
-<h2>Now!</h2>
+<h2>Current release</h2>
 
 <p>Dancer is already <br />
 usable and pretty stable</p>
@@ -446,3 +465,18 @@ was powered by Dancer
 ===
 
 <h1>Vim time</h1>
+
+===
+
+<h1><strike>Vim time</strike></h1>
+
+===
+
+<p>
+<a href="http://github.com/sukria/Broadway">Broadway on GitHub</a>
+</p>
+
+===
+
+<p>Thanks</p>
+

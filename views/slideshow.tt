@@ -4,6 +4,7 @@ window.slide = 0;
 <% if is_multi_touch %>
 window.broadway_effects = 0;
 
+/*
 document.addEventListener('touchmove', function(event) {
     event.preventDefault();
     point_x = event.touches[0].pageX;
@@ -18,9 +19,12 @@ document.addEventListener('touchmove', function(event) {
 		broadway_refresh();
     }
 }, false);
+*/
+
 
 <% else %>
 
+<% if settings.broadway.remote %>
 window.broadway_effects = 1;
 window.setInterval(function() {
     $.ajax({
@@ -36,6 +40,7 @@ window.setInterval(function() {
     );
 
 }, <% settings.broadway.refresh_rate %>);
+<% end %>
 
 <% end %>
 
@@ -43,3 +48,5 @@ window.setInterval(function() {
 
 <div id="slide">
 </div>
+
+

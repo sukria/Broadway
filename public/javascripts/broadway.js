@@ -48,6 +48,9 @@ function broadway_refresh() {
         type: "POST",
         url: "/refresh_slide",
         cache: false,
+		error: function(failure) {
+			alert("unable to receive content");
+		},
         success: function(html) {
 
             // replace the slide content
@@ -87,7 +90,7 @@ $(document).ready(function() {
 	window.pending_keypress = 0;
 
     // register key bindings
-    $(document).keypress(function(e) {
+    $(document).keyup(function(e) {
         if(e.keyCode == KEY_LEFT && (!window.pending_keypress)) {
 			window.pending_keypress = 1;
             broadway_prev();

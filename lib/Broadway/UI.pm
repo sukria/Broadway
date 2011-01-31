@@ -29,6 +29,8 @@ get '/slide/:slide' => sub {
 };
 
 ajax '/refresh_slide' => sub {
+    content_type "text/html; charset=UTF-8";
+
     if (params->{'slide'}) {
         display_slide(params->{'slide'});
     }
