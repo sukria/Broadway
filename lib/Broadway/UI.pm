@@ -2,7 +2,6 @@ package Broadway::UI;
 
 use Dancer ':syntax';
 use Dancer::Plugin::Ajax;
-
 use Broadway::Slide;
 
 sub display_slide {
@@ -11,16 +10,29 @@ sub display_slide {
     return template("slide-$slide");
 }
 
+ajax '/preview' => sub {
+    my $next = Broadway::Slide->current + 1;
+    content_type "text/html; charset=UTF-8";
+    display_slide($next);
+};
+
 before_template sub { 
     my $tokens = shift;
     if (request->agent =~ /Android|iPhone/i) {
-        debug "is_multi_touch : ".request->user_agent;
         $tokens->{is_multi_touch} = 1;
     }
 };
 
 get '/' => sub { 
-    template 'slideshow';
+
+    my $tokens = {};
+
+    if (request->agent =~ /Android|iPhone/i) {
+        debug "is_multi_touch : ".request->user_agent;
+        $tokens->{is_multi_touch} = 1;
+    }
+
+    template 'slideshow', $tokens;
 };
 
 get '/slide/:slide' => sub {
