@@ -92,6 +92,26 @@ CGI.pm
 
 ===
 
+<pre class="prettyprint">
+use CGI;
+
+# init stuff that gets run 
+# at every single request
+my $q = CGI->new;
+
+# crappy code to find out 
+# what the user wants...
+if ($q->param('action') eq 'do_stuff') {
+    ...
+}
+
+# build the response by hand
+print $q->header();
+print $some_content;
+</pre>
+
+===
+
 <img src="/images/optimus.jpg" style="float: left;">
 <div style="padding-top: 1em;">
 <h3>The big sister</h3>
@@ -99,6 +119,20 @@ CGI.pm
 
 <p style="padding-top: 2em;">Catalyst</p>
 </div>
+
+===
+
+<pre class="prettyprint">
+package MyApp::Controller::Root;
+...
+
+sub index :Path :Args(0) {
+    my ( $self, $c ) = @_;
+
+    # Hello World
+    $c-&gt;response-&gt;body( $c-&gt;welcome_message );
+}
+</pre>
 
 ===
 
@@ -110,28 +144,44 @@ CGI.pm
 Sinatra (Ruby)
 </p>
 
-=== 
-
-<h2>The structure</h2>
-
-<center><img src="/images/psgi.jpg"></center>
-
-<p>PSGI</p>
-
 ===
+
+<pre class="prettyprint">
+require 'sinatra'
+
+get '/hey' do
+  "Hello World!"
+end
+</pre>
+
+=== 
 
 <h2>Dancer</h2>
 
+<img style="background-color: #fff" src="/images/dancer-logo.png" />
+
+===
+
 <pre class="prettyprint">
-#!/usr/bin/perl
 use Dancer;
 
-get '/' => sub {
-    "Hello, world!";
+get '/hey' => sub {
+    "Hello World!"
 };
 
 dance;
 </pre>
+
+===
+
+<h2>Key Features</h2>
+
+<ul>
+<li>Expressiveness</li>
+<li>Effortless</li>
+<li>Modular</li>
+<li>Lightweight</li>
+</ul>
 
 ===
 
@@ -145,6 +195,7 @@ dance;
 <li>Standalone server
 <li>zero-conf (up to you)
 <li>effortless
+</ul>
 
 ===
 
@@ -256,6 +307,11 @@ foo: 42
 </pre>
 
 ===
+
+And lots of syntactic sugar<br />
+for building a webapp...
+
+===
 <h2>filters</h2>
 
 <pre class="prettyprint">
@@ -297,7 +353,63 @@ $ curl http://0:3000/data
 
 ===
 
-<h2>Plugins</h2>
+<h2>Session</h2>
+
+<pre class="prettyprint">
+
+post '/login' =&gt; sub {
+    my ($login, $passwd) = 
+        (params-&gt;{login}, params-&gt;{passwd});
+
+    if (MyApp::Auth-&gt;($login, $passwd)) {
+        session user =&gt; $login;
+    }
+};
+
+</pre>
+
+===
+
+<h2>Logger</h2>
+
+<pre class="prettyprint">
+
+set logger =&gt; 'console';
+set log    =&gt; 'debug';
+
+get '/somewhere' =&gt; sub {
+    debug "I'm lost somewhere";
+    ...
+};
+
+</pre>
+
+===
+
+And more... with plugins
+
+===
+
+<h2>Ajax</h2>
+
+<pre class="prettyprint">
+use Dancer;
+use Dancer::Plugin::Ajax;
+
+ajax '/something' => sub {
+    ...
+};
+
+# is post or get
+# header X-Requested-With must 
+# be 'XMLHttpRequest'
+
+</pre>
+
+
+===
+
+<h2>Database</h2>
 
 <pre class="prettyprint">
 
@@ -313,9 +425,33 @@ get '/user/:id' => sub {
 
 ===
 
+<h2>ReST</h2>
+
+<pre class="prettyprint">
+
+use Dancer::Plugin::REST;
+
+prepare_serializer_for_format;
+
+get '/user/:id.:format' => sub {
+    $user = fetch_the_user(params->id);
+    return $user;
+};
+
+# /user/42.xml
+# /user/42.json
+# /user/42.yml
+</pre>
+
+===
+
+Plugins allow you to <em>extend</em> Dancer's DSL
+
+===
+
 <p>This is Dancer's essentials</p>
 
-=== 
+===
 
 <p>There is a lot more </p>
 
@@ -352,77 +488,13 @@ Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug
 
 ===
 
-<h1>How trustable</h1>
-
-===
-
-<h2>YoolinkPro</h2>
-
-<ul>
-<li>API Webserver
-<li>Request Authentication (key signatures)
-<li>REST with Dancer::Plugin::REST
-</ul>
-
-===
-
-<h2>Linkfluence</h2>
-
-<ul>
-<li>Dancer-powered websites
-<li><a href="http://jitterbug.perldancer.org">Jitterbug</a> (Franck Cuny)
-</ul>
-
-===
-
-<h2>Novell: Baracus</h2>
-
-<ul>
-<li><a href="http://baracus-project.org">http://baracus-project.org</a>
-<li>Enterprise boot and build management
-<li>Dancer frontend web engine
-<li>Complete REST API
-</ul>
-
-===
-
-<h2>you and me</h2>
-
-<p>more and more enthusiast individuals use Dancer</p>
-
-===
-
 <h2>Community</h2>
 
 <ul>
-<li>More 160 GitHub watchers
-<li>40 GitHub forks
-<li>Very active core team
+<li>More 230 GitHub watchers
+<li>More than 70 GitHub forks
+<li>Very active core team (5 members)
 <li>More than 90% code coverage
-</ul>
-
-===
-
-<h2>Current release</h2>
-
-<p>Dancer is already <br />
-usable and pretty stable</p>
-
-===
-
-<h2>But soon...</h2>
-
-<p>We're preparing a rocksolid release</p>
-
-===
-
-<h2>Dancer 1.2</h2>
-
-<ul>
-<li>New website
-<li>Improved documentation
-<li>Improved Plack support
-<li>T-shirts!
 </ul>
 
 ===
@@ -445,7 +517,6 @@ was powered by Dancer
 </p>
 
 ===
-
 
 <center><img src="/images/broadway.jpg"></center>
 
