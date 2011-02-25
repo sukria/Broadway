@@ -1,4 +1,3 @@
-<center>
 <h1>Perl Dancer</h1>
 
 <img src="/images/perldancer.png" style="border: 0">
@@ -7,7 +6,6 @@
 The easiest way to write <br />
 web applications with Perl
 </p>
-<center>
 
 ===
 
@@ -31,14 +29,6 @@ for Perl
 ===
 <h3>
 <em>effective</em> <br>
-web framework <br>
-for Perl
-</h3>
-
-===
-
-<h3>
-<em>elegant</em> <br>
 web framework <br>
 for Perl
 </h3>
@@ -78,6 +68,23 @@ and even more
 
 ===
 
+It's a Domain Specific Language (<em>DSL</em>)<br />
+for building web applications.
+
+===
+
+Route-based implementation
+
+===
+
+As intuitive as possible
+
+===
+
+Very thin layer
+
+===
+
 <h1>Origins</h1>
 
 ===
@@ -112,6 +119,10 @@ print $some_content;
 
 ===
 
+CGI is slow, unmaintainable and boring.
+
+===
+
 <img src="/images/optimus.jpg" style="float: left;">
 <div style="padding-top: 1em;">
 <h3>The big sister</h3>
@@ -137,6 +148,20 @@ sub index :Path :Args(0) {
 
 ===
 
+Catalyst is powerful, but the <br />
+price to pay is <em>complexity</em>
+
+===
+
+How about making <br />
+web development <em>simple</em>?
+
+===
+
+(and fun!)
+
+===
+
 <img src="/images/sinatra.png" align="left">
 
 <h2>The inspiration</h2>
@@ -147,23 +172,18 @@ Sinatra (Ruby)
 
 ===
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="font-size: 58px;">
 require 'sinatra'
 
 get '/hey' do
-  "Hello World!"
+    "Hello World!"
 end
 </pre>
 
-=== 
-
-<h2>Dancer</h2>
-
-<img style="background-color: #fff" src="/images/dancer-logo.png" />
 
 ===
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="font-size: 58px;">
 use Dancer;
 
 get '/hey' => sub {
@@ -174,6 +194,15 @@ dance;
 </pre>
 
 ===
+
+<h2>Dancer</h2>
+
+<img style="background-color: #fff" src="/images/dancer-logo.png" />
+
+<p>
+</p>
+
+=== 
 
 <h2>Key Features</h2>
 
@@ -195,19 +224,36 @@ dance;
 <li>Easy (few deps)
 <li>Standalone server
 <li>zero-conf (up to you)
-<li>effortless
 </ul>
 
 ===
 
-<h2>Development</h2>
+<pre>
+sudo cpanm Dancer
+</pre>
+
+===
+
+<h2>Oneliner?</h2>
+
+<pre>
+$ perl -MDancer \
+  -e 'get "/" =&gt; sub {"Golf\n"}; dance' &amp;
+...
+$ curl http://localhost:3000/
+Golf
+</pre>
+
+===
+
+<h2>Scaffolding?</h2>
 
 <pre style="font-size: 32px;">
 $ dancer -a SuperApp
 ...
 $ cd SuperApp
 $ ./bin/app.pl
->> Dancer server 23482 listening...
+&gt;&gt; Dancer server 23482 listening...
 == Entering the development dance floor ...
 </pre>
 
@@ -219,6 +265,16 @@ $ ./bin/app.pl
 Thanks to PSGI/Plack we<br />
 can deploy vritually anywhere
 </p>
+
+===
+
+<pre style="font-size: 30px;">
+$ plackup bin/app.pl
+HTTP::Server::PSGI: Accepting connections...
+</pre>
+
+<br/>
+A Dancer script is a PSGI application.
 
 ===
 
@@ -313,6 +369,18 @@ And lots of syntactic sugar<br />
 for building a webapp...
 
 ===
+<h2>Request introspection</h2>
+
+
+<pre class="prettyprint">
+get '/' =&gt; sub {
+    if (request-&gt;upload('some_file')) {
+        ...
+    }
+};
+</pre>
+
+===
 <h2>filters</h2>
 
 <pre class="prettyprint">
@@ -330,10 +398,13 @@ before sub {
 <h2>Templates</h2>
 
 <pre class="prettyprint">
+# choose a template engine
+set template =&gt; 'Mason';
 
-get '/' => sub {
+# use it
+get '/' =&gt; sub {
     template 'index', 
-      { somevar => 101010 };
+      { somevar =&gt; 101010 };
 };
 
 ===
@@ -341,10 +412,12 @@ get '/' => sub {
 <h2>Serializers</h2>
 
 <pre class="prettyprint">
-set serializer => 'JSON';
+# choose a serializer engine
+set serializer =&gt; 'JSON';
 
-get '/data' => sub {
-    return {foo => 42};
+# use it
+get '/data' =&gt; sub {
+    return {foo =&gt; 42};
 };
 
 $ curl http://0:3000/data
@@ -356,8 +429,11 @@ $ curl http://0:3000/data
 
 <h2>Session</h2>
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="font-size: 32px;">
+# choose a session engine
+set session =&gt; 'Memcached';
 
+# use it
 post '/login' =&gt; sub {
     my ($login, $passwd) = 
         (params-&gt;{login}, params-&gt;{passwd});
@@ -374,16 +450,32 @@ post '/login' =&gt; sub {
 <h2>Logger</h2>
 
 <pre class="prettyprint">
-
+# choose a logger engine
 set logger =&gt; 'console';
 set log    =&gt; 'debug';
 
+# use it
 get '/somewhere' =&gt; sub {
     debug "I'm lost somewhere";
     ...
 };
 
 </pre>
+
+===
+
+<p>Engines are pluggable modular bricks</p>
+
+<p>Very easy to write your own</p>
+
+===
+
+<ul>
+<li>Dancer::Template::Abstract</li>
+<li>Dancer::Session::Abstract</li>
+<li>Dancer::Logger::Abstract</li>
+<li>Dancer::Serializer::Abstract</li>
+</ul>
 
 ===
 
