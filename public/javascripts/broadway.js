@@ -72,7 +72,8 @@ function broadway_refresh() {
                 url: '/current_slide',
                 cache: false,
                 success: function(json) {
-                    $('#slide_number').html(json['slide'] + 1);
+                    slide = parseInt(json['slide']);
+                    $('#slide_number').html( slide + 1);
             }});
         }
     });
