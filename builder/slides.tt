@@ -59,15 +59,6 @@ for Perl
 
 ===
 
-<h2>YES</h2>
-
-<p>
-It's all that, <br />
-and even more
-</p>
-
-===
-
 It's a Domain Specific Language (<em>DSL</em>)<br />
 for building web applications.
 
@@ -164,10 +155,10 @@ web development <em>simple</em>?
 
 <img src="/images/sinatra.png" align="left">
 
-<h2>The inspiration</h2>
+<h3>The inspiration</h3>
 
 <p>
-Sinatra (Ruby)
+Sinatra
 </p>
 
 ===
@@ -238,7 +229,7 @@ sudo cpanm Dancer
 
 <pre>
 $ perl -MDancer \
-  -e 'get "/" =&gt; sub {"Golf\n"}; dance' &amp;
+  -e 'get "/" =&gt; sub {"Golf\n"}; dance'
 ...
 $ curl http://localhost:3000/
 Golf
@@ -274,7 +265,8 @@ HTTP::Server::PSGI: Accepting connections...
 </pre>
 
 <br/>
-A Dancer script is a PSGI application.
+A Dancer script is a<br/>
+PSGI application.
 
 ===
 
@@ -349,12 +341,23 @@ get qr{/([a-z]{2}[\d+])/} => sub {
 
 ===
 
+<h2>Static Files</h2>
+
+<pre class="prettyprint">
+set public =&gt; "/some/path";
+
+# any file in /some/path is served 
+# automatically
+</pre>
+
+===
+
 <h2>Configuration</h2>
 
 
 <pre class="prettyprint">
 # in my code
-setting 'foo' => 42;
+set 'foo' => 42;
 
 # or in my config.yml
 foo: 42
@@ -385,11 +388,8 @@ get '/' =&gt; sub {
 
 <pre class="prettyprint">
 before sub { 
-  if (request->path_info =~ /^\/home/) {
-      if (not session('user_id')) {
-          redirect '/login';
-      }
-  }
+    return if $_dbh-&gt;ping;
+    $_dbh = DBI-&gt;connect(...);
 };
 </pre>
 
@@ -525,7 +525,8 @@ use Dancer::Plugin::REST;
 prepare_serializer_for_format;
 
 get '/user/:id.:format' => sub {
-    $user = fetch_the_user(params->id);
+    my $id = params-&gt;{'id'};
+    $user = fetch_the_user($id);
     return $user;
 };
 
@@ -644,31 +645,5 @@ was powered by Dancer
 <p>Dancer-based Slideshow engine</p>
 
 ===
-
-<h2>Broadway</h2>
-
-<ul>
-<li>a slideshow engine
-<li>Ajax-based
-<li>with remote controll
-<li>less than 50 lines of Dancer
-</ul>
-
-===
-
 <h1>Vim time</h1>
-
-===
-
-<h1><strike>Vim time</strike></h1>
-
-===
-
-<p>
-<a href="http://github.com/sukria/Broadway">Broadway on GitHub</a>
-</p>
-
-===
-
-<p>Thanks</p>
 
