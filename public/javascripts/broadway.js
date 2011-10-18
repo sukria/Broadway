@@ -73,7 +73,8 @@ function broadway_refresh() {
                 cache: false,
                 success: function(json) {
                     slide = parseInt(json['slide']);
-                    $('#slide_number').html( slide + 1);
+                    slides = parseInt(json['slides']);
+                    $('#slide_number').html( (slide + 1) + '/' + (slides+1));
             }});
         }
     });
