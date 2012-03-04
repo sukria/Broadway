@@ -92,13 +92,13 @@ $(document).ready(function() {
 
     // register key bindings
     $(document).keyup(function(e) {
-        if(e.keyCode == KEY_LEFT && (!window.pending_keypress)) {
+        if( (e.keyCode == KEY_LEFT || e.keyCode == 33 ) && (!window.pending_keypress)) {
 			window.pending_keypress = 1;
             broadway_prev();
             broadway_refresh();
 			window.pending_keypress = 0;
         }
-        else if (e.keyCode == KEY_RIGHT && (!window.pending_keypress)) {
+        else if ((e.keyCode == KEY_RIGHT || e.keyCode == 34) && (!window.pending_keypress)) {
 			window.pending_keypress = 1;
             broadway_next();
             broadway_refresh();

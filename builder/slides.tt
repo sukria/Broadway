@@ -1,3 +1,14 @@
+
+<div style="display: none">
+<img src="/images/perldancer.png" style="border: 0">
+<center><img src="/images/castle.jpg"></center>
+<img src="/images/optimus.jpg" style="float: left;">
+<img src="/images/sinatra.png" align="left">
+<img style="background-color: #fff" src="/images/dancer-logo.png" />
+<img src="/images/james.jpg" />
+<img src="/images/dancer-cloud-zoom.png"/>
+</div>
+
 <h1>Perl Dancer</h1>
 
 <img src="/images/perldancer.png" style="border: 0">
@@ -27,8 +38,9 @@ for Perl
 </h3>
 
 ===
+
 <h3>
-<em>effective</em> <br>
+<em>PSGI</em> <br>
 web framework <br>
 for Perl
 </h3>
@@ -45,14 +57,6 @@ for Perl
 
 <h3>
 <em>fun</em> <br>
-web framework <br>
-for Perl
-</h3>
-
-===
-
-<h3>
-<em>PSGI</em> <br>
 web framework <br>
 for Perl
 </h3>
@@ -195,81 +199,6 @@ dance;
 
 === 
 
-<h2>Key Features</h2>
-
-<ul>
-<li>Expressiveness</li>
-<li>Effortless</li>
-<li>Modular</li>
-<li>Lightweight</li>
-</ul>
-
-===
-
-<h1>How to dance</h1>
-
-===
-<h2>Installation</h2>
-
-<ul>
-<li>Easy (few deps)
-<li>Standalone server
-<li>zero-conf (up to you)
-</ul>
-
-===
-
-<pre>
-sudo cpanm Dancer
-</pre>
-
-===
-
-<h2>Oneliner?</h2>
-
-<pre>
-$ perl -MDancer \
-  -e 'get "/" =&gt; sub {"Golf\n"}; dance'
-...
-$ curl http://localhost:3000/
-Golf
-</pre>
-
-===
-
-<h2>Scaffolding?</h2>
-
-<pre style="font-size: 32px;">
-$ dancer -a SuperApp
-...
-$ cd SuperApp
-$ ./bin/app.pl
-&gt;&gt; Dancer server 23482 listening...
-== Entering the development dance floor ...
-</pre>
-
-===
-
-<h2>Deployment</h2>
-
-<p>
-Thanks to PSGI/Plack we<br />
-can deploy vritually anywhere
-</p>
-
-===
-
-<pre style="font-size: 30px;">
-$ plackup bin/app.pl
-HTTP::Server::PSGI: Accepting connections...
-</pre>
-
-<br/>
-A Dancer script is a<br/>
-PSGI application.
-
-===
-
 <h2>Routes</h2>
 
 <p>routes are Dancer's wires</p>
@@ -384,10 +313,10 @@ get '/' =&gt; sub {
 </pre>
 
 ===
-<h2>filters</h2>
+<h2>Hooks</h2>
 
 <pre class="prettyprint">
-before sub { 
+hook 'before' =&gt; sub { 
     return if $_dbh-&gt;ping;
     $_dbh = DBI-&gt;connect(...);
 };
@@ -543,7 +472,7 @@ Plugins allow you to <br />
 
 ===
 
-<p>There is a lot more </p>
+<p>Meet the ecosystem</p>
 
 ===
 
@@ -574,35 +503,39 @@ Dancer::Cookie Dancer::<em>Serializer</em>::YAML Dancer::Logger::LogHandler Danc
 Dancer::Session::PSGI Dancer::Plugin::Scoped Dancer::Debug ...
 </p>
 
-=== 
-
-More than 50 distributions on CPAN
-
 ===
-
-More and more every day!
-
-===
-
 
 <img src="/images/james.jpg" />
 
 <h2>Our Community Rocks!</h2>
 
-===
+=== 
 
-<h2>Community</h2>
-
-<ul>
-<li>410 GitHub watchers
-<li>125 GitHub forks
-<li>Active core team (5 members)
-<li>4200 commits so far, by 50+ commiters
-</ul>
+More than 100 distributions on CPAN
 
 ===
+400+ GitHub watchers, <br>
+120+ GitHub forks
 
-<h2>Join</h2>
+=== 
+
+Active Core Team (6 members)
+
+===
+
+<h2>Git History</h2>
+
+4200 commits so far, by 50+ commiters
+
+===
+
+Happy Users<BR>
+
+<img src="/images/dancer-cloud-zoom.png"/>
+
+===
+
+<h2>Join!</h2>
 
 ===
 

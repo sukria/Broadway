@@ -12,10 +12,10 @@ engines:
 # broadway
 broadway:
   title: "Perl Dancer"
-  date: "Feb. 24, 2011"
-  event: "BPW 2011"
+  date: "March. 5, 2012"
+  event: "Perl, Fun Again (La Cantine)"
   author: "Alexis Sukrieh"
-  slides: 74
+  slides: 65
   refresh_rate: 600
   remote: 0
 

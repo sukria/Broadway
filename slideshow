@@ -1,0 +1,8 @@
+#!/bin/bash
+
+kill $(ps fax | grep perl | grep app.pl | awk '{print $1}') 2>/dev/null
+sleep 1
+./bin/app.pl &
+sleep 2
+chromium-browser http://0:3000/
+
