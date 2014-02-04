@@ -22,7 +22,10 @@ ajax '/first' => sub {
 
 ajax '/current_slide' => sub {
     content_type 'application/json';
-    to_json({ slide => Broadway::Slide->current });
+    to_json({
+        slide => Broadway::Slide->current,
+        slides => config->{broadway}{slides},
+    });
 };
 
 1;
